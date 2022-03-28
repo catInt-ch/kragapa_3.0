@@ -1,7 +1,3 @@
 <div>Hello World</div>
-<button mat-button (click)="toggleMotto()">Motto</button>
-<button mat-button (click)="toggleMFoodAndDrinks()">Essen und Trinken</button>
-<button mat-button (click)="toggleMap()">Map</button>
-<app-motto *ngIf="showMotto"></app-motto>
-<app-food-and-drinks *ngIf="showFoodAndDrinks"></app-food-and-drinks>
-<app-map *ngIf="showMap"></app-map>
+<app-home></app-home>
+<router-outlet></router-outlet>

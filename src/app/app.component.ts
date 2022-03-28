@@ -7,19 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'kragapa3';
-  showMap = false;
-  showFoodAndDrinks = false;
-  showMotto = false;
 
-  toggleMap() {
-   this.showMap = !this.showMap;
- }
-
-  toggleMotto() {
-  this.showMotto = !this.showMotto
-  }
-
-  toggleMFoodAndDrinks() {
-    this.showFoodAndDrinks = !this.showFoodAndDrinks;
-  }
 }
