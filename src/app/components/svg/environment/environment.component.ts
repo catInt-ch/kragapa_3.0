@@ -55,6 +55,7 @@ export class EnvironmentComponent implements OnInit {
     this.width = this.height * this.aspectRatio;
     this.height = window.innerHeight;
     svg.style.transform = 'scale(1) translateY(0%)';
+    this.router.navigate(['/']);
   }
 
   zoomIn(): void {
@@ -65,11 +66,13 @@ export class EnvironmentComponent implements OnInit {
 
   navigateFoodAndDrinks(): void {
     const svg = this.environmentElRef.nativeElement as SVGElement;
-    this.reset(svg);
+    svg.style.transform = 'scale(7) translateY(-37%) translateX(28%)';
     this.router.navigate(['/', 'foods-drinks']);
   }
 
   showMap(): void {
-    throw new Error('not yet implemented');
+    const svg = this.environmentElRef.nativeElement as SVGElement;
+    svg.style.transform = 'scale(10) translateY(-37%) translateX(-13%)';
+    this.router.navigate(['/', 'map']);
   }
 }

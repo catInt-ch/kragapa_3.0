@@ -23,8 +23,8 @@ export class NavigationService {
           case '/foods-drinks':
             this.navigationState$.next(NavigationState.FoodAndDrinks);
             break;
-          case 'map':
-            this.navigationState$.next(NavigationState.FoodAndDrinks);
+          case '/map':
+            this.navigationState$.next(NavigationState.Map);
             break;
           default:
             this.navigationState$.next(NavigationState.Overview);
@@ -34,6 +34,6 @@ export class NavigationService {
   }
 
   navigateForward(): void {
-    this.navigationState$.next(this.navigationState$.value + 1);
+    this.navigationState$.next((this.navigationState$.value + 1) % 4);
   }
 }
