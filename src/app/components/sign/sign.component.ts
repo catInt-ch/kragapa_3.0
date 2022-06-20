@@ -3,12 +3,12 @@ import { NavigationService } from 'src/app/services/navigation.service';
 import { fadeInOut } from 'src/app/util/fade-in-out.animation';
 
 @Component({
-  selector: 'app-map',
-  templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss'],
+  selector: 'app-sign',
+  templateUrl: './sign.component.html',
+  styleUrls: ['./sign.component.scss'],
   animations: [fadeInOut],
 })
-export class MapComponent implements OnInit {
+export class SignComponent implements OnInit {
   isDisplayed: boolean = false;
 
   constructor(private navigationService: NavigationService) {}

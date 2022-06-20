@@ -1,0 +1,50 @@
+<div class="mt-28 w-screen flex flex-col justify-center items-center">
+  <h1 class="text-4xl text-white">KraGaPa 3.0</h1>
+  <form
+    class="z-20 p-6 w-full flex flex-col justify-center items-center"
+    [formGroup]="signUpForm"
+    (submit)="onSubmitForm()"
+  >
+    <mat-form-field>
+      <mat-label for="firstName">Vorname:</mat-label>
+      <input matInput id="firstName" type="text" formControlName="firstName" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="lastName">Nachname:</mat-label>
+      <input matInput id="lastName" type="text" formControlName="lastName" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="foodType">Was für Essen bringst du?</mat-label>
+      <mat-select formControlName="foodType">
+        <mat-option value="Salat">Salat</mat-option>
+        <mat-option value="Dessert">Dessert</mat-option>
+        <mat-option value="Nichts">Ich bin faul und bringe nichts</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="meal">Was bringst du genau?</mat-label>
+      <input matInput id="meal" type="text" formControlName="meal" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="favoriteDrink">Lieblingsgetränk:</mat-label>
+      <input
+        matInput
+        id="favoriteDrink"
+        type="text"
+        formControlName="favoriteDrink"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="invitedBy">Wer hat dich eingeladen?</mat-label>
+      <mat-select formControlName="invitedBy">
+        <mat-option value="Karin">Karin</mat-option>
+        <mat-option value="Nadia">Nadia</mat-option>
+        <mat-option value="Nathalie">Nathalie</mat-option>
+        <mat-option value="Sheila">Sheila</mat-option>
+        <mat-option value="Andere">Andere Person</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-flat-button>Anmelden!</button>
+  </form>
+</div>

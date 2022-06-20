@@ -44,8 +44,11 @@ export class EnvironmentComponent implements OnInit {
           case NavigationState.FoodAndDrinks:
             this.navigateFoodAndDrinks();
             break;
-          case NavigationState.Map:
+          case NavigationState.Sign:
             this.showMap();
+            break;
+          case NavigationState.SignUp:
+            this.showForm();
             break;
         }
       });
@@ -73,6 +76,12 @@ export class EnvironmentComponent implements OnInit {
   showMap(): void {
     const svg = this.environmentElRef.nativeElement as SVGElement;
     svg.style.transform = 'scale(10) translateY(-37%) translateX(-13%)';
-    this.router.navigate(['/', 'map']);
+    this.router.navigate(['/', 'sign']);
+  }
+
+  showForm(): void {
+    const svg = this.environmentElRef.nativeElement as SVGElement;
+    svg.style.transform = 'scale(5) translateY(20%) translateX(0%)';
+    this.router.navigate(['/', 'sign-up']);
   }
 }
