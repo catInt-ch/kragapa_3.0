@@ -1,4 +1,7 @@
-<div class="pt-28 w-screen flex flex-col justify-center items-center">
+<div
+  *ngIf="!isSignupCompleted; else signupSuccessful"
+  class="pt-28 w-screen flex flex-col justify-center items-center"
+>
   <h1 class="text-4xl text-white">KraGaPa 3.0</h1>
   <form
     class="z-20 p-6 w-full flex flex-col justify-center items-center"
@@ -55,3 +58,9 @@
     <button mat-flat-button>Anmelden!</button>
   </form>
 </div>
+
+<ng-template #signupSuccessful>
+  <h2 @fadeInOut class="pt-48 text-4xl text-white text-center">Du bist angemeldet!</h2>
+  <h4 @fadeInOut class="pt-8 text-2xl text-white text-center">Wir freuen uns auf dich</h4>
+  <app-fireworks></app-fireworks>
+</ng-template>
