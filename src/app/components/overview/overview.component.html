@@ -1,7 +1,10 @@
-<div class="container mx-auto">
-  <h1 class="text-white text-4xl">KraGaPa 3.0</h1>
+<div class="container mx-auto pt-40">
+  <h1 class="text-white text-4xl text-center text-8xl" style="font: 200 48px Impact, fantasy">
+    Kramers <br> Gartenparty 3.0
+  </h1>
+  <div *ngFor="let item of [].constructor(10); let i = index" [class]="'firework-'+i"></div>
   <button
-    class="bg-rose-50 text-rose-400 p-2 rounded-lg absolute bottom-4 left-4 z-50"
+    class="navigate-button right bg-rose-50 text-rose-400 p-2 rounded-lg absolute bottom-4  z-50"
     (click)="onNavigateForward()"
   >
     Gehe zu Motto

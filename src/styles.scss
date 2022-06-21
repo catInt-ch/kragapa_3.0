@@ -48,3 +48,42 @@ form {
     color: white;
   }
 }
+
+.navigate-button {
+  border-radius: 2px 0 0 2px;
+  margin-left: 1rem;
+
+  &.right::after {
+    @apply text-rose-50;
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 2em solid;
+    right: -2em;
+  }
+
+  &.left::after {
+    @apply text-rose-50;
+    content: "";
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 2em solid;
+    left: -2em;
+  }
+
+  &:before {
+    color: #4c2200;
+    content: ".";
+    position: absolute;
+    top: 50%;
+    margin-top: 20px;
+    left: 2rem;
+    border-left: 1em solid;
+  }
+}
