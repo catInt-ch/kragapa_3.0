@@ -25,13 +25,16 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label for="foodType">Was für Essen bringst du?</mat-label>
-      <mat-select formControlName="foodType">
-        <mat-option value="Salat">Salat</mat-option>
+      <mat-select
+        (valueChange)="onSelectMealType($event)"
+        formControlName="foodType"
+      >
+        <mat-option value="Salat">Salat / Beilage</mat-option>
         <mat-option value="Dessert">Dessert</mat-option>
         <mat-option value="Nichts">Ich bin faul und bringe nichts</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field *ngIf="bringsMeal">
       <mat-label for="meal">Was bringst du genau?</mat-label>
       <input matInput id="meal" type="text" formControlName="meal" />
     </mat-form-field>
@@ -46,7 +49,10 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label for="invitedBy">Wer hat dich eingeladen?</mat-label>
-      <mat-select formControlName="invitedBy">
+      <mat-select
+        (valueChange)="onSelectPerson($event)"
+        formControlName="invitedBy"
+      >
         <mat-option value="Karin">Karin</mat-option>
         <mat-option value="Nadia">Nadia</mat-option>
         <mat-option value="Nathalie">Nathalie</mat-option>
@@ -54,13 +60,26 @@
         <mat-option value="Andere">Andere Person</mat-option>
       </mat-select>
     </mat-form-field>
+    <mat-form-field *ngIf="isOtherPerson">
+      <mat-label for="otherPerson">Erzählst du uns auch wer?</mat-label>
+      <input
+        matInput
+        id="otherPerson"
+        type="text"
+        formControlName="otherPerson"
+      />
+    </mat-form-field>
 
     <button mat-flat-button>Anmelden!</button>
   </form>
 </div>
 
 <ng-template #signupSuccessful>
-  <h2 @fadeInOut class="pt-48 text-4xl text-white text-center">Du bist angemeldet!</h2>
-  <h4 @fadeInOut class="pt-8 text-2xl text-white text-center">Wir freuen uns auf dich</h4>
+  <h2 @fadeInOut class="pt-48 text-4xl text-white text-center">
+    Du bist angemeldet!
+  </h2>
+  <h4 @fadeInOut class="pt-8 text-2xl text-white text-center">
+    Wir freuen uns auf dich
+  </h4>
   <app-fireworks></app-fireworks>
 </ng-template>
