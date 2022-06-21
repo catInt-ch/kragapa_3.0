@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "kragapa-c2502": {
+      "hosting": {
+        "kragapa3": [
+          "kragapa-c2502"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "kragapa-c2502"
+  }
+}

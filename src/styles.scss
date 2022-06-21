@@ -9,8 +9,6 @@ html,
 body {
   height: 100%;
   width: 100%;
-  position: fixed;
-  overflow: hidden;
 }
 body {
   margin: 0;
@@ -32,6 +30,10 @@ form {
     &.mat-focused {
       color: white !important;
     }
+  }
+
+  .mat-select-value {
+    color: white !important;
   }
 
   .mat-form-field-appearance-outline .mat-form-field-outline {
