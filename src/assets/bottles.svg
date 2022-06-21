@@ -1,0 +1,18 @@
+<svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.5 17H10.5C10.5 12 10 8.5 9 6.5C8.1649 4.8298 9 3 9 0.5H7C7 3.5 7.3 4.5 6.5 6.5C5.7 8.5 5.5 14.3333 5.5 17Z" fill="#93FFCA" stroke="#93FFCA"/>
+<path d="M7 12.5H10.5V17.5H7V12.5Z" fill="black"/>
+<rect width="3" height="2.5" transform="matrix(-1 0 0 1 9.5 0)" fill="#2F2F2F"/>
+<path d="M8 6.5L9 5.5V4H6.5V5.5L8 6.5Z" fill="black"/>
+<path d="M1 17H6C6 12 5.5 8.5 4.5 6.5C3.6649 4.8298 4.5 3 4.5 0.5H2.5C2.5 3.5 2.8 4.5 2 6.5C1.2 8.5 1 14.3333 1 17Z" fill="#1D0071" stroke="#1D0071"/>
+<path d="M2.5 12.5H6V17.5H2.5V12.5Z" fill="#CCCCCC"/>
+<rect width="3" height="2.5" transform="matrix(-1 0 0 1 5 0)" fill="#2F2F2F"/>
+<path d="M3.5 6.5L4.5 5.5V4H2V5.5L3.5 6.5Z" fill="#CCCCCC"/>
+<path d="M17.5 17H12.5C12.5 12 13 8.5 14 6.5C14.8351 4.8298 14 3 14 0.5H16C16 3.5 15.7 4.5 16.5 6.5C17.3 8.5 17.5 14.3333 17.5 17Z" fill="#016735" stroke="black"/>
+<path d="M16 12.5H12.5V17.5H16V12.5Z" fill="black"/>
+<rect x="13.5" width="3" height="2.5" fill="#2F2F2F"/>
+<path d="M15 6.5L14 5.5V4H16.5V5.5L15 6.5Z" fill="black"/>
+<path d="M22 17H17C17 12 17.5 8.5 18.5 6.5C19.3351 4.8298 18.5 3 18.5 0.5H20.5C20.5 3.5 20.2 4.5 21 6.5C21.8 8.5 22 14.3333 22 17Z" fill="#B02000" stroke="#B02000"/>
+<path d="M20.5 12.5H17V17.5H20.5V12.5Z" fill="#CCCCCC"/>
+<rect x="18" width="3" height="2.5" fill="#2F2F2F"/>
+<path d="M19.5 6.5L18.5 5.5V4H21V5.5L19.5 6.5Z" fill="#CCCCCC"/>
+</svg>
