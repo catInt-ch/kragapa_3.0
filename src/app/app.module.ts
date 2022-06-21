@@ -8,10 +8,7 @@ import { SignComponent } from './components/sign/sign.component';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { ForestComponent } from './components/svg/forest/forest.component';
 import { EnvironmentComponent } from './components/svg/environment/environment.component';
-import { PeopleComponent } from './components/svg/people/people.component';
-import { TentComponent } from './components/svg/tent/tent.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -32,10 +29,7 @@ import { FireworksComponent } from './components/sign-up/fireworks/fireworks.com
     MottoComponent,
     FoodAndDrinksComponent,
     SignComponent,
-    ForestComponent,
     EnvironmentComponent,
-    PeopleComponent,
-    TentComponent,
     OverviewComponent,
     SignUpComponent,
     FireworksComponent,

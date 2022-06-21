@@ -10,7 +10,7 @@ const forbiddenNames: string[] = ['Marco Inniger', 'Nadia Kramer'];
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss'],
-  animations: [fadeInOut]
+  animations: [fadeInOut],
 })
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup = new FormGroup({
@@ -20,17 +20,25 @@ export class SignUpComponent implements OnInit {
     meal: new FormControl(''),
     favoriteDrink: new FormControl('', Validators.required),
     invitedBy: new FormControl('', Validators.required),
+    otherPerson: new FormControl(''),
   });
+
+  bringsMeal = false;
+  isOtherPerson = false;
 
   isSignupCompleted = false;
 
-  get isNameValid(): string {
+  get name(): string {
     const firstName = this.signUpForm.controls['firstName'].value;
     const lastName = this.signUpForm.controls['lastName'].value;
-    const isValid = !forbiddenNames.includes(`${firstName} ${lastName}`);
+    return `${firstName} ${lastName}`;
+  }
+
+  get isNameValid(): string {
+    const isValid = !forbiddenNames.includes(this.name);
     if (!isValid) {
       this.signUpForm.controls['lastName'].setErrors({ invalid: true });
-      return `${firstName} ${lastName} ist kein gültiger Name`;
+      return `${this.name} ist kein gültiger Name`;
     }
     return '';
   }
@@ -51,6 +59,34 @@ export class SignUpComponent implements OnInit {
         .catch((err) => {
           console.log(err);
         });
+    }
+  }
+
+  onSelectMealType(value: string): void {
+    const mealControl = this.signUpForm.controls['meal'];
+    if (value !== 'Nichts') {
+      this.bringsMeal = true;
+      mealControl.addValidators(Validators.required);
+      if (this.name === 'Yves Wehrli') {
+        mealControl.setValue("Yves' Brot");
+      }
+    } else {
+      this.bringsMeal = false;
+      mealControl.removeValidators(Validators.required);
+    }
+  }
+
+  onSelectPerson(value: string): void {
+    if (value === 'Andere') {
+      this.isOtherPerson = true;
+      this.signUpForm.controls['otherPerson'].addValidators(
+        Validators.required
+      );
+    } else {
+      this.isOtherPerson = false;
+      this.signUpForm.controls['otherPerson'].removeValidators(
+        Validators.required
+      );
     }
   }
 }
