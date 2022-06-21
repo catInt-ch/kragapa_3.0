@@ -57,7 +57,7 @@ export class EnvironmentComponent implements OnInit {
   reset(svg: SVGElement): void {
     this.width = this.height * this.aspectRatio;
     this.height = window.innerHeight;
-    svg.style.transform = 'scale(1) translateY(0%)';
+    svg.style.transform = 'scale(1.2) translate(0%, -5%)';
     this.router.navigate(['/']);
   }
 

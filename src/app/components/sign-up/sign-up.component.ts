@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserData } from 'src/app/models/user-data.model';
 import { SignUpService } from 'src/app/services/sign-up.service';
+import { fadeInOut } from 'src/app/util/fade-in-out.animation';
 
 const forbiddenNames: string[] = ['Marco Inniger', 'Nadia Kramer'];
 
@@ -9,6 +10,7 @@ const forbiddenNames: string[] = ['Marco Inniger', 'Nadia Kramer'];
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss'],
+  animations: [fadeInOut]
 })
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup = new FormGroup({
@@ -19,6 +21,8 @@ export class SignUpComponent implements OnInit {
     favoriteDrink: new FormControl('', Validators.required),
     invitedBy: new FormControl('', Validators.required),
   });
+
+  isSignupCompleted = false;
 
   get isNameValid(): string {
     const firstName = this.signUpForm.controls['firstName'].value;
@@ -42,6 +46,7 @@ export class SignUpComponent implements OnInit {
         .signUp(userData)
         .then((res) => {
           console.log(res);
+          this.isSignupCompleted = true;
         })
         .catch((err) => {
           console.log(err);

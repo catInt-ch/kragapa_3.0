@@ -8,7 +8,6 @@ import { SignComponent } from './components/sign/sign.component';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './components/home/home.component';
 import { ForestComponent } from './components/svg/forest/forest.component';
 import { EnvironmentComponent } from './components/svg/environment/environment.component';
 import { PeopleComponent } from './components/svg/people/people.component';
@@ -22,9 +21,10 @@ import {
 } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { FireworksComponent } from './components/sign-up/fireworks/fireworks.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +32,13 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     MottoComponent,
     FoodAndDrinksComponent,
     SignComponent,
-    HomeComponent,
     ForestComponent,
     EnvironmentComponent,
     PeopleComponent,
     TentComponent,
     OverviewComponent,
     SignUpComponent,
+    FireworksComponent,
   ],
   imports: [
     BrowserModule,
