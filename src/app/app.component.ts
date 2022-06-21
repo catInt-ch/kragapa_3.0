@@ -6,7 +6,8 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,23 @@ import { Component } from '@angular/core';
     ]),
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'kragapa3';
+  isHomeDisplayed: boolean;
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart && event.url !== '/sign-up') {
+        this.isHomeDisplayed = true;
+      } else if (event instanceof NavigationEnd) {
+        if (event.url === '/sign-up') {
+          setTimeout(() => {
+            this.isHomeDisplayed = false;
+          }, 1500);
+        }
+      }
+    });
+  }
 }
