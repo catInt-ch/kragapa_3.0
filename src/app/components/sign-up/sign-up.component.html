@@ -1,4 +1,4 @@
-<div class="mt-28 w-screen flex flex-col justify-center items-center">
+<div class="pt-28 w-screen flex flex-col justify-center items-center">
   <h1 class="text-4xl text-white">KraGaPa 3.0</h1>
   <form
     class="z-20 p-6 w-full flex flex-col justify-center items-center"
@@ -11,7 +11,14 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label for="lastName">Nachname:</mat-label>
-      <input matInput id="lastName" type="text" formControlName="lastName" />
+      <input
+        matInput
+        id="lastName"
+        type="text"
+        formControlName="lastName"
+        (change)="(isNameValid)"
+      />
+      <mat-error *ngIf="signUpForm.invalid">{{ isNameValid }}</mat-error>
     </mat-form-field>
     <mat-form-field>
       <mat-label for="foodType">Was für Essen bringst du?</mat-label>
