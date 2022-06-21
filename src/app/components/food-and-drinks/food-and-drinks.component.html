@@ -5,28 +5,28 @@
       <!--food and drinks on the table-->
       <div class="flex flex-row justify-around meals">
         <img
-          *ngIf="isDisplayed"
+          [ngClass]="{'opacity-0': !isBottleDisplayed}"
           @fadeInOut
           class="z-21 meal"
           src="assets/bottles.svg"
           alt="Table with food"
         />
         <img
-          *ngIf="isDisplayed"
+          [ngClass]="{'opacity-0': !isBigBottleDisplayed}"
           @fadeInOut
           class="z-21 meal"
           src="assets/big_bottles.svg"
           alt="Table with food"
         />
         <img
-          *ngIf="isDisplayed"
+          [ngClass]="{'opacity-0': !isSaladDisplayed}"
           @fadeInOut
           class="z-21 meal"
           src="assets/salad.svg"
           alt="Table with food"
         />
         <img
-          *ngIf="isDisplayed"
+          [ngClass]="{'opacity-0': !isChickenDisplayed}"
           @fadeInOut
           class="z-21 meal"
           src="assets/chicken_bread.svg"
@@ -36,7 +36,7 @@
 
       <!--table-->
       <img
-        *ngIf="isDisplayed"
+        *ngIf="isTableDisplayed"
         @fadeInOut
         class="z-20"
         src="assets/Table.svg"
@@ -45,16 +45,17 @@
       />
     </div>
   </div>
-  <div class="mx-4 p-2 text-white bg-red-800 rounded-md absolute top-1/4">
+  <div class="mx-4 p-2 text-white bg-rose-400 rounded-md absolute top-1/4">
     <h1>Getränke und Essen</h1>
     <span>
-      Wir stellen wieder eine Vielzahl von Getränken bereit. Essen bringst du
-      selbst mit und kannst es auf einer der Feuerstellen zubereiten.
+      Wir stellen wieder eine Vielzahl von Getränken bereit. Speisen für auf den Grill bringst du
+      selbst mit und kannst es auf einer der Feuerstellen zubereiten. Wir freuen uns, wenn du einen Salat,
+      eine Beilage oder ein Dessert mitbringen kannst.
     </span>
   </div>
 
   <button
-    class="bg-red-900 text-white p-2 rounded-lg absolute bottom-4 left-4 z-50"
+    class="bg-rose-50 text-rose-400 p-2 rounded-lg absolute bottom-4 left-4 z-50"
     (click)="onNavigateForward()"
   >
     Gehe zu Weitere Informationen

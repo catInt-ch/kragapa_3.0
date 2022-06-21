@@ -9,12 +9,20 @@ import { fadeInOut } from 'src/app/util/fade-in-out.animation';
   animations: [fadeInOut],
 })
 export class FoodAndDrinksComponent implements OnInit {
-  isDisplayed: boolean = false;
+  isTableDisplayed: boolean = false;
+  isSaladDisplayed: boolean = false;
+  isBottleDisplayed: boolean = false;
+  isBigBottleDisplayed: boolean = false;
+  isChickenDisplayed: boolean = false;
 
   constructor(private navigationService: NavigationService) {}
 
   ngOnInit(): void {
-    setTimeout(() => (this.isDisplayed = true), 2000);
+    setTimeout(() => (this.isTableDisplayed = true), 2000);
+    setTimeout(() => (this.isBottleDisplayed = true), 3000);
+    setTimeout(() => (this.isBigBottleDisplayed = true), 4000);
+    setTimeout(() => (this.isSaladDisplayed = true), 2500);
+    setTimeout(() => (this.isChickenDisplayed = true), 3500);
   }
 
   onNavigateForward(): void {
