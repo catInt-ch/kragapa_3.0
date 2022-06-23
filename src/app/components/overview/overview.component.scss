@@ -11,8 +11,8 @@ $frame-list: firework-sm, firework-md, firework-lg;
   .firework-#{$i} {
     animation: nth($frame-list, random(3)) 1.2s both infinite;
     animation-delay: #{random($count) * 0.1}s;
-    top: random(16) * 5% + 2%;
-    left: random(16) * 5% + 2%;
+    top: random(16) * 4%;
+    left: random(16) * 7%;
   }
 }
 
