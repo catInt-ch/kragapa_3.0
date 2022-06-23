@@ -15,6 +15,11 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+@font-face {
+  font-family: "Impact";
+  src: local("Impact"), url(./assets/fonts/impact.ttf) format("truetype");
+}
+
 mat-form-field {
   @apply w-full;
 }
