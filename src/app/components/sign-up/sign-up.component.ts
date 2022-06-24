@@ -45,7 +45,9 @@ export class SignUpComponent implements OnInit {
 
   constructor(private signUpService: SignUpService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    document.body.style.overflowY = "scroll";
+  }
 
   onSubmitForm(): void {
     if (this.signUpForm.valid) {
