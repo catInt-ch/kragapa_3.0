@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=/kragapa_3.0/"
+    "deploy": "ng deploy --base-href=/ --cname=anmeldung.kragapa.ch"
   },
   "private": true,
   "dependencies": {
