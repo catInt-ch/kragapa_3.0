@@ -1,8 +1,9 @@
 <div
   *ngIf="!isSignupCompleted; else signupSuccessful"
-  class="pt-28 w-screen flex flex-col justify-center items-center"
+  class="pt-10 flex flex-col justify-center items-center"
 >
-  <h1 class="text-4xl text-white">KraGaPa 3.0</h1>
+  <h1 class="text-4xl text-white" style="font: 200 32px Impact, fantasy">KraGaPa 3.0</h1>
+  <p class="text-white text-center pt-4 px-6">Anmeldungen sind bis zum 16.07.2022 möglich.</p>
   <form
     class="z-20 p-6 w-full flex flex-col justify-center items-center"
     [formGroup]="signUpForm"

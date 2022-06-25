@@ -11,6 +11,17 @@ body {
   width: 100%;
   overflow: hidden;
 }
+
+html {
+  @media screen and (min-device-aspect-ratio: 9/10) {
+    padding: 0 20% 0 20%;
+  }
+
+  @media screen and (min-device-aspect-ratio: 10/10) {
+    padding: 0 30% 0 30%;
+  }
+}
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -20,6 +31,11 @@ body {
 @font-face {
   font-family: "Impact";
   src: local("Impact"), url(./assets/fonts/impact.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Chalkduster";
+  src: local("Chalkduster"), url(./assets/fonts/Chalkduster.ttf) format("truetype");
 }
 
 mat-form-field {
