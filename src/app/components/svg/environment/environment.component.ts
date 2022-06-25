@@ -50,6 +50,9 @@ export class EnvironmentComponent implements OnInit {
           case NavigationState.SignUp:
             this.showForm();
             break;
+          case NavigationState.StaffOnly:
+            this.showParticipants();
+            break;
         }
       });
   }
@@ -85,5 +88,11 @@ export class EnvironmentComponent implements OnInit {
     const svg = this.environmentElRef.nativeElement as SVGElement;
     svg.style.transform = 'scale(5) translateY(20%) translateX(0%)';
     this.router.navigate(['/', 'sign-up']);
+  }
+
+  showParticipants(): void {
+    const svg = this.environmentElRef.nativeElement as SVGElement;
+    svg.style.transform = 'scale(5) translateY(20%) translateX(0%)';
+    this.router.navigate(['/', 'staff-only']);
   }
 }

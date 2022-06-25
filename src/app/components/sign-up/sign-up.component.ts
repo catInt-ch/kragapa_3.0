@@ -4,7 +4,7 @@ import { UserData } from 'src/app/models/user-data.model';
 import { SignUpService } from 'src/app/services/sign-up.service';
 import { fadeInOut } from 'src/app/util/fade-in-out.animation';
 
-const forbiddenNames: string[] = ['Marco Inniger', 'Nadia Kramer'];
+const forbiddenNames: string[] = [];
 
 @Component({
   selector: 'app-sign-up',
@@ -53,7 +53,7 @@ export class SignUpComponent implements OnInit {
     if (this.signUpForm.valid) {
       const userData = this.signUpForm.value as UserData;
       this.signUpService
-        .signUp(userData)
+        .signUp({...userData, created: new Date().toString()})
         .then((res) => {
           console.log(res);
           this.isSignupCompleted = true;
@@ -66,16 +66,17 @@ export class SignUpComponent implements OnInit {
 
   onSelectMealType(value: string): void {
     const mealControl = this.signUpForm.controls['meal'];
-    if (value !== 'Nichts') {
+    if (value === 'Nichts') {
+      this.bringsMeal = false;
+      this.signUpForm.controls['meal'].removeValidators(Validators.required);
+    } else {
       this.bringsMeal = true;
-      mealControl.addValidators(Validators.required);
+      this.signUpForm.controls['meal'].addValidators(Validators.required);
       if (this.name === 'Yves Wehrli') {
         mealControl.setValue("Yves' Brot");
       }
-    } else {
-      this.bringsMeal = false;
-      mealControl.removeValidators(Validators.required);
     }
+    this.signUpForm.controls['meal'].updateValueAndValidity();
   }
 
   onSelectPerson(value: string): void {
@@ -90,5 +91,7 @@ export class SignUpComponent implements OnInit {
         Validators.required
       );
     }
+    this.signUpForm.controls['otherPerson'].updateValueAndValidity();
   }
+
 }

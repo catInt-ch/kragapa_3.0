@@ -11,7 +11,9 @@ export class UserData {
     public foodType: string,
     public meal: string,
     public favoriteDrink: string,
-    public invitedBy: string
+    public invitedBy: string,
+    public otherPerson: string,
+    public created: string,
   ) {}
 }
 
@@ -24,6 +26,8 @@ export const userDataConverter = {
       meal: user.meal,
       favoriteDrink: user.favoriteDrink,
       invitedBy: user.invitedBy,
+      otherPerson: user.otherPerson,
+      created: user.created,
     };
   },
   fromFirestore(
@@ -37,7 +41,9 @@ export const userDataConverter = {
       data['foodType'],
       data['meal'],
       data['favoriteDrink'],
-      data['invitedBy']
+      data['invitedBy'],
+      data['otherPerson'],
+      data['created'],
     );
   },
 };

@@ -22,6 +22,9 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { FireworksComponent } from './components/sign-up/fireworks/fireworks.component';
+import { SubscribersComponent } from './components/subscribers/subscribers.component';
+import {MatTableModule} from "@angular/material/table";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
@@ -33,20 +36,23 @@ import { FireworksComponent } from './components/sign-up/fireworks/fireworks.com
     OverviewComponent,
     SignUpComponent,
     FireworksComponent,
+    SubscribersComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore()),
+        MatTableModule,
+        MatIconModule,
+    ],
   providers: [
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,

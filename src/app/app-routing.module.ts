@@ -5,6 +5,7 @@ import { SignComponent } from './components/sign/sign.component';
 import { MottoComponent } from './components/motto/motto.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import {SubscribersComponent} from "./components/subscribers/subscribers.component";
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'sign-up',
     component: SignUpComponent,
+  },
+  {
+    path: 'staff-only',
+    component: SubscribersComponent,
   },
   {
     path: '*/*',

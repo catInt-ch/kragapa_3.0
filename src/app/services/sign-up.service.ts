@@ -17,7 +17,7 @@ export class SignUpService {
   }
 
   signUp(user: UserData): Promise<string> {
-    return addDoc(this.usersCollection, user).then((res) => {
+    return addDoc(this.usersCollection, {...user}).then((res) => {
       return res.id;
     });
   }

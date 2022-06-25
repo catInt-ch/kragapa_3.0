@@ -4,4 +4,5 @@ export enum NavigationState {
   FoodAndDrinks = 2,
   Sign = 3,
   SignUp = 4,
+  StaffOnly = 5,
 }

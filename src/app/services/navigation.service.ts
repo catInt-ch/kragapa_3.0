@@ -29,6 +29,9 @@ export class NavigationService {
           case '/sign-up':
             this.navigationState$.next(NavigationState.SignUp);
             break;
+          case '/staff-only':
+            this.navigationState$.next(NavigationState.StaffOnly);
+            break;
           default:
             this.navigationState$.next(NavigationState.Overview);
         }
