@@ -70,8 +70,7 @@
         formControlName="otherPerson"
       />
     </mat-form-field>
-
-    <button mat-flat-button>Anmelden!</button>
+    <button mat-flat-button class="bg-rose-50 text-rose-400">Anmelden!</button>
   </form>
 </div>
 
@@ -82,5 +81,14 @@
   <h4 @fadeInOut class="pt-8 text-2xl text-white text-center">
     Wir freuen uns auf dich
   </h4>
+  <div class="pt-10 flex flex-col justify-center items-center">
+    <button
+      mat-flat-button
+      class="bg-rose-50 text-rose-400 z-50"
+      (click)="onNavigateForward()"
+    >
+      Zurück zum Start
+    </button>
+  </div>
   <app-fireworks></app-fireworks>
 </ng-template>

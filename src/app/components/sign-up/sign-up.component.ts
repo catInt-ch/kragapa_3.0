@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserData } from 'src/app/models/user-data.model';
 import { SignUpService } from 'src/app/services/sign-up.service';
 import { fadeInOut } from 'src/app/util/fade-in-out.animation';
+import {NavigationService} from "../../services/navigation.service";
 
 const forbiddenNames: string[] = [];
 
@@ -43,7 +44,7 @@ export class SignUpComponent implements OnInit {
     return '';
   }
 
-  constructor(private signUpService: SignUpService) {}
+  constructor(private signUpService: SignUpService, private navigationService: NavigationService) {}
 
   ngOnInit(): void {
     document.body.style.overflowY = "scroll";
@@ -94,4 +95,7 @@ export class SignUpComponent implements OnInit {
     this.signUpForm.controls['otherPerson'].updateValueAndValidity();
   }
 
+  onNavigateForward(): void {
+    this.navigationService.navigateForward();
+  }
 }

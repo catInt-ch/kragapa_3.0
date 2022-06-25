@@ -42,4 +42,8 @@ export class NavigationService {
   navigateForward(): void {
     this.navigationState$.next((this.navigationState$.value + 1) % 5);
   }
+
+  navigateBack(): void {
+    this.navigationState$.next((this.navigationState$.value - 1) % 5);
+  }
 }
