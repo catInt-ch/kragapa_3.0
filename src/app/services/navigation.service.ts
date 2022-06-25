@@ -16,25 +16,32 @@ export class NavigationService {
         switch (routeEvent.url) {
           case '/':
             this.navigationState$.next(NavigationState.Overview);
+            document.body.style.overflowY = "hidden";
             break;
           case '/motto':
             this.navigationState$.next(NavigationState.Motto);
+            document.body.style.overflowY = "hidden";
             break;
           case '/foods-drinks':
             this.navigationState$.next(NavigationState.FoodAndDrinks);
+            document.body.style.overflowY = "hidden";
             break;
           case '/sign':
             this.navigationState$.next(NavigationState.Sign);
+            document.body.style.overflowY = "hidden";
             break;
           case '/sign-up':
             this.navigationState$.next(NavigationState.SignUp);
             break;
           case '/staff-only':
             this.navigationState$.next(NavigationState.StaffOnly);
+            document.body.style.overflowY = "hidden";
             break;
           default:
             this.navigationState$.next(NavigationState.Overview);
+            document.body.style.overflowY = "hidden";
         }
+        setTimeout(() => (document.body.scrollTop = document.documentElement.scrollTop = 0), 50)
       }
     });
   }

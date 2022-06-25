@@ -56,7 +56,7 @@ export class SignUpComponent implements OnInit {
       this.signUpService
         .signUp({...userData, created: new Date().toString()})
         .then((res) => {
-          console.log(res);
+          document.body.scrollTop = document.documentElement.scrollTop = 0;
           this.isSignupCompleted = true;
         })
         .catch((err) => {

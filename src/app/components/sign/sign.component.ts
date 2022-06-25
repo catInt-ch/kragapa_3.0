@@ -17,7 +17,6 @@ export class SignComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => (this.isDisplayed = true), 2000);
     setTimeout(() => (this.isTextDisplayed = true), 2500);
-
   }
 
   onNavigateForward(): void {
