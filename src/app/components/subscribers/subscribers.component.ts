@@ -45,10 +45,10 @@ export class SubscribersComponent implements OnInit{
   ngOnInit() {
     document.body.style.overflowY = "scroll";
     this.signUpService.getUsers().subscribe(data => {
-      const mapped = data.map((item, index) => ({index: index + 1, ...item}));
-      this.dataSource = mapped.sort((a: { created: string; }, b: { created: string; })=> {
-        return new Date(a.created).getTime() || 0 - new Date(b.created).getTime() || 0
+      const sorted = data.sort((a: { created: string; }, b: { created: string; })=> {
+        return new Date(a.created).getTime() - new Date(b.created).getTime()
       });
+      this.dataSource = sorted.map((item, index) => ({index: index + 1, ...item}));
     })
   }
 }
