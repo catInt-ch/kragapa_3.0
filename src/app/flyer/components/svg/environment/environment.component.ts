@@ -21,7 +21,7 @@ export class EnvironmentComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private navgigationService: NavigationService
+    private navigationService: NavigationService
   ) {}
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class EnvironmentComponent implements OnInit {
     this.height = this.width * this.aspectRatio;
 
     this.navigationStateSubscription =
-      this.navgigationService.navigationState$.subscribe((state) => {
+      this.navigationService.navigationState$.subscribe((state) => {
         switch (state) {
           case NavigationState.Overview:
             if (this.environmentElRef) {
@@ -52,6 +52,9 @@ export class EnvironmentComponent implements OnInit {
             break;
           case NavigationState.StaffOnly:
             this.showParticipants();
+            break;
+          case NavigationState.Checklist:
+            this.showChecklist();
             break;
         }
       });
@@ -94,5 +97,11 @@ export class EnvironmentComponent implements OnInit {
     const svg = this.environmentElRef.nativeElement as SVGElement;
     svg.style.transform = 'scale(5) translateY(20%) translateX(0%)';
     this.router.navigate(['/', 'staff-only']);
+  }
+
+  showChecklist(): void {
+    const svg = this.environmentElRef.nativeElement as SVGElement;
+    svg.style.transform = 'scale(5) translateY(20%) translateX(0%)';
+    this.router.navigate(['/', 'checklist']);
   }
 }

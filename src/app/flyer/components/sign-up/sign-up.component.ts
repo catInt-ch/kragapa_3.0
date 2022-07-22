@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserData } from 'src/app/models/user-data.model';
 import { SignUpService } from 'src/app/services/sign-up.service';
 import { fadeInOut } from 'src/app/util/fade-in-out.animation';
-import {NavigationService} from "../../services/navigation.service";
+import {NavigationService} from "../../../services/navigation.service";
 
 const forbiddenNames: string[] = [];
 

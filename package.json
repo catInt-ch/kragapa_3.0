@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=/ --cname=www.kragapa.ch"
+    "deploy": "ng deploy --base-href=/ --cname=www.kragapa.ch",
+    "generate": "ng g module shared"
   },
   "private": true,
   "dependencies": {

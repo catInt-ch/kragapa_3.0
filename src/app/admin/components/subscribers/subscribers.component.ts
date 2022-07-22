@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
-import {UserData} from "../../models/user-data.model";
-import {SignUpService} from "../../services/sign-up.service";
+import {UserData} from "../../../models/user-data.model";
+import {SignUpService} from "../../../services/sign-up.service";
 
 @Component({
   selector: 'app-subscribers',
@@ -20,6 +20,10 @@ export class SubscribersComponent implements OnInit{
   columnsToDisplay = ['index', 'firstName', 'lastName'];
   columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
   expandedElement: UserData | null;
+
+  dataSourceDessert: any;
+  dataSourceSalad: any;
+  displayedColumns = ['meal', 'name'];
 
   constructor(private signUpService: SignUpService) {}
 
@@ -49,6 +53,10 @@ export class SubscribersComponent implements OnInit{
         return new Date(a.created).getTime() - new Date(b.created).getTime()
       });
       this.dataSource = sorted.map((item, index) => ({index: index + 1, ...item}));
+      const meals = sorted.map((item, index) => ({index: index + 1, name: item.firstName + " " + item.lastName, ...item}));
+      this.dataSourceDessert = meals.filter(item => item.foodType === 'Dessert');
+      this.dataSourceSalad = meals.filter(item => item.foodType === 'Salat')
+
     })
   }
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { collectionData, Firestore } from '@angular/fire/firestore';
-import { addDoc, collection, CollectionReference } from '@firebase/firestore';
+import {collectionData, doc, Firestore} from '@angular/fire/firestore';
+import { addDoc, collection, updateDoc, CollectionReference } from '@firebase/firestore';
 import { Observable } from 'rxjs';
 import { UserData, userDataConverter } from '../models/user-data.model';
 
@@ -20,6 +20,10 @@ export class SignUpService {
     return addDoc(this.usersCollection, {...user}).then((res) => {
       return res.id;
     });
+  }
+
+  check(user: any): Promise<any> {
+    return updateDoc(doc(this.firestore, `users/${user.id}`), {...user});
   }
 
   getUsers(): Observable<UserData[]> {

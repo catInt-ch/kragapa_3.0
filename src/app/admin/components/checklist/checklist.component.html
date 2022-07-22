@@ -1,0 +1,63 @@
+<div class="bg-black list-container">
+  <h1 class="p-6 pb-2 text-white font-extrabold text-2xl">
+    Einnahmen: <span class="text-3xl text-[#ff4081] pl-6 font-extrabold"> CHF {{ getIncome() }}.-</span>
+  </h1>
+
+  <h2 class="p-6 pb-2 text-white font-extrabold">Nicht bezahlt</h2>
+  <table mat-table [dataSource]="dataSourceUnpaid" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> Vorname</th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Nachname</th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="check">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox [(ngModel)]="element.addCheckmark" (change)="newCheck('check')"></mat-checkbox>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <h2 class="p-6 pb-2 text-white font-extrabold">Bezahlt</h2>
+  <table mat-table [dataSource]="dataSourcePaid" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> Vorname</th>
+      <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Nachname</th>
+      <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="checker">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <mat-checkbox color="primary" [(ngModel)]="element.removeCheckmark" (change)="newCheck('uncheck')"></mat-checkbox>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+
+  </table>
+
+  <div class="fab-button-container">
+    <button *ngIf="getUncheckingUsers()?.length" (click)="uncheck()" mat-fab color="primary">
+      <mat-icon>person_remove</mat-icon>
+    </button>
+    <button *ngIf="getCheckingUsers()?.length" (click)="check()" mat-fab color="accent">
+      <mat-icon>payments</mat-icon>
+    </button>
+  </div>
+</div>

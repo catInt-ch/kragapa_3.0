@@ -6,6 +6,7 @@ import {
 
 export class UserData {
   constructor(
+    public id: string | null,
     public firstName: string,
     public lastName: string,
     public foodType: string,
@@ -14,6 +15,7 @@ export class UserData {
     public invitedBy: string,
     public otherPerson: string,
     public created: string,
+    public check: string,
   ) {}
 }
 
@@ -36,6 +38,7 @@ export const userDataConverter = {
   ): UserData {
     const data = snapshot.data(options)!;
     return new UserData(
+      snapshot.id,
       data['firstName'],
       data['lastName'],
       data['foodType'],
@@ -44,6 +47,7 @@ export const userDataConverter = {
       data['invitedBy'],
       data['otherPerson'],
       data['created'],
+      data['check'],
     );
   },
 };
