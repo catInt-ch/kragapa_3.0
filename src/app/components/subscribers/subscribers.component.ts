@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from "@angular/animations";
-import {UserData} from "../../../models/user-data.model";
-import {SignUpService} from "../../../services/sign-up.service";
+import {UserData} from "../../models/user-data.model";
+import {SignUpService} from "../../services/sign-up.service";
 
 @Component({
   selector: 'app-subscribers',

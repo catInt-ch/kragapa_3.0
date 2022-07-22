@@ -38,13 +38,6 @@ export class NavigationService {
             document.body.style.overflowY = "hidden";
             break;
           case '/checklist':
-            this.navigationState$.next(NavigationState.UserSelector);
-            document.body.style.overflowY = "hidden";
-            break;
-          case '/checklist/nadia':
-          case '/checklist/sheila':
-          case '/checklist/natha':
-          case '/checklist/karin':
             this.navigationState$.next(NavigationState.Checklist);
             document.body.style.overflowY = "hidden";
             break;

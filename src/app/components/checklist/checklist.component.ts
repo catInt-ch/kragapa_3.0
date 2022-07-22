@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {SignUpService} from "../../../services/sign-up.service";
-import {UserData} from "../../../models/user-data.model";
+import {SignUpService} from "../../services/sign-up.service";
+import {UserData} from "../../models/user-data.model";
 import {MatDialog} from "@angular/material/dialog";
 
 @Component({
@@ -13,9 +13,9 @@ export class ChecklistComponent implements OnInit {
   dataSourceUnpaid: any;
   dataSourcePaid: any;
   displayedColumns = ['firstName', 'lastName', 'check'];
-  displayedColumns2 = ['firstName', 'lastName', 'checker'];
+  displayedColumns2 = ['checker', 'firstName', 'lastName', 'check'];
 
-  checker: string;
+  checker: string = '';
 
   constructor(private signUpService: SignUpService) {}
 
@@ -49,7 +49,7 @@ export class ChecklistComponent implements OnInit {
     if (this.getCheckingUsers()) {
       this.getCheckingUsers().forEach(user => {
         this.signUpService
-          .check({...user, check: 'Nadia'})
+          .check({...user, check: this.checker})
           .catch((err) => {
             console.log(err);
           });

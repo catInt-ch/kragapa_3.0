@@ -5,6 +5,5 @@ export enum NavigationState {
   Sign = 3,
   SignUp = 4,
   StaffOnly = 900,
-  UserSelector = 999,
   Checklist = 1000
 }

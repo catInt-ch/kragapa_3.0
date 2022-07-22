@@ -72,6 +72,18 @@ form {
   }
 }
 
+.mat-button-toggle-checked.mat-button-toggle-appearance-standard {
+  .mat-button-toggle-button {
+    background-color: rgb(255 64 129) !important;
+    color: white !important;
+  }
+}
+
+.mat-button-toggle-button {
+  background-color: black !important;
+  color: white !important;
+}
+
 .navigate-button {
   border-radius: 2px 0 0 2px;
   margin-left: 1rem;

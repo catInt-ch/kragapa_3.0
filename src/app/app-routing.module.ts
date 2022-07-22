@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FoodAndDrinksComponent } from './flyer/components/food-and-drinks/food-and-drinks.component';
-import { SignComponent } from './flyer/components/sign/sign.component';
-import { MottoComponent } from './flyer/components/motto/motto.component';
-import { OverviewComponent } from './flyer/components/overview/overview.component';
-import { SignUpComponent } from './flyer/components/sign-up/sign-up.component';
-import {SubscribersComponent} from "./admin/components/subscribers/subscribers.component";
-import {ChecklistComponent} from "./admin/components/checklist/checklist.component";
-import {UserSelectorComponent} from "./admin/components/user-selector/user-selector.component";
+import { FoodAndDrinksComponent } from './components/food-and-drinks/food-and-drinks.component';
+import { SignComponent } from './components/sign/sign.component';
+import { MottoComponent } from './components/motto/motto.component';
+import { OverviewComponent } from './components/overview/overview.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import {SubscribersComponent} from "./components/subscribers/subscribers.component";
+import {ChecklistComponent} from "./components/checklist/checklist.component";
 
 const routes: Routes = [
   {
@@ -36,29 +35,7 @@ const routes: Routes = [
   },
   {
     path: 'checklist',
-    component: UserSelectorComponent,
-    children: [
-      {
-        path: 'nadia',
-        component: ChecklistComponent,
-        data: { user: 'nadia' }
-      },
-      {
-        path: 'natha',
-        component: ChecklistComponent,
-        data: { user: 'natha' }
-      },
-      {
-        path: 'karin',
-        component: ChecklistComponent,
-        data: { user: 'karin' }
-      },
-      {
-        path: 'sheila',
-        component: ChecklistComponent,
-        data: { user: 'sheila' }
-      },
-    ]
+    component: ChecklistComponent,
   },
 
   {
